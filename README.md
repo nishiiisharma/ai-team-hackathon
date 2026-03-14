@@ -1,6 +1,6 @@
-# Kombee AI Backbone (Phase 1)
+# Kombee AI Backbone (Phase 1 + Phase 2 Starter)
 
-This repository contains the **Phase 1 implementation** for Kombee AI Engineering Hackathon 2.0.
+This repository contains the **Phase 1 implementation** and **Phase 2 practical demonstration pipeline** for Kombee AI Engineering Hackathon 2.0.
 
 ## What is implemented
 
@@ -21,6 +21,12 @@ This repository contains the **Phase 1 implementation** for Kombee AI Engineerin
 - Self-healing loop (maximum 2 retries)
 - Response formatter
 - Observability and cost logging
+- Phase 2 restaurant inventory assistant:
+  - Menu ingestion (PDF/text)
+  - AI dish + ingredient extraction
+  - Vector storage of dish-ingredient knowledge
+  - Dummy DB generation (users/products/orders/order_details)
+  - Historical quantity prediction and final cart output
 
 ## Tech stack
 
@@ -54,6 +60,26 @@ This repository contains the **Phase 1 implementation** for Kombee AI Engineerin
    python -m src.project.main --query "Explain RAG in JSON format"
    ```
 
+## Phase 2 quick start
+
+1. Set PostgreSQL URL in `.env`:
+
+   ```env
+   PHASE2_DATABASE_URL=postgresql://postgres:postgres@localhost:5432/kombee_phase2
+   ```
+
+2. Generate dummy data (PDF requirement: users/products/orders/order_details):
+
+   ```bash
+   python -m scripts.generate_phase2_data
+   ```
+
+3. Run Phase 2 assistant:
+
+   ```bash
+   python -m src.project.phase2.main --menu-path ./examples/sample_menu.txt --user-id 1
+   ```
+
 ## Structure (Phase 1 relevant)
 
 - `src/project/main.py` - CLI entry point
@@ -67,6 +93,8 @@ This repository contains the **Phase 1 implementation** for Kombee AI Engineerin
 - `src/project/validators/guardrails.py` - response validation checks
 - `src/project/handlers/response_handler.py` - output formatting
 - `src/project/telemetry/logger.py` - observability and cost logging
+- `src/project/phase2/` - practical demonstration pipeline
+- `scripts/generate_phase2_data.py` - dummy database generation script
 
 ## Notes
 
