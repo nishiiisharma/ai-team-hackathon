@@ -5,6 +5,10 @@ import json
 import os
 import time
 
+from dotenv import load_dotenv
+
+load_dotenv()  # Load .env so PHASE2_DATABASE_URL is available
+
 from src.project.phase2.database import SeedConfig, create_schema, get_connection, seed_data
 
 
