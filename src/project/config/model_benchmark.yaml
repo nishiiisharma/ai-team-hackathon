@@ -1,0 +1,65 @@
+models:
+  gemini-2.5-flash-lite:
+    quality: 0.74
+    cost_efficiency: 0.98
+    latency: 0.95
+    reliability: 0.88
+    reasoning: 0.70
+    coding: 0.66
+  gemini-2.5-flash:
+    quality: 0.84
+    cost_efficiency: 0.90
+    latency: 0.88
+    reliability: 0.91
+    reasoning: 0.82
+    coding: 0.79
+  gemini-2.5-pro:
+    quality: 0.95
+    cost_efficiency: 0.55
+    latency: 0.58
+    reliability: 0.94
+    reasoning: 0.95
+    coding: 0.92
+  gemini-3-flash-preview:
+    quality: 0.90
+    cost_efficiency: 0.72
+    latency: 0.78
+    reliability: 0.85
+    reasoning: 0.90
+    coding: 0.85
+
+weights:
+  lightweight:
+    quality: 0.20
+    cost_efficiency: 0.40
+    latency: 0.30
+    reliability: 0.10
+  coding:
+    quality: 0.30
+    coding: 0.35
+    cost_efficiency: 0.10
+    latency: 0.10
+    reliability: 0.15
+  reasoning:
+    quality: 0.35
+    reasoning: 0.35
+    cost_efficiency: 0.05
+    latency: 0.05
+    reliability: 0.20
+
+budget_penalty:
+  low:
+    gemini-2.5-pro: 0.30
+    gemini-3-flash-preview: 0.18
+  balanced:
+    gemini-2.5-pro: 0.12
+    gemini-3-flash-preview: 0.06
+
+complexity_boost:
+  high:
+    reasoning:
+      quality: 0.10
+      reasoning: 0.08
+    coding:
+      quality: 0.08
+      coding: 0.08

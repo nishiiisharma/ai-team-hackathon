@@ -1,0 +1,9 @@
+[project]
+name = "kombee-ai-backbone"
+version = "0.1.0"
+description = "Phase 1 backbone orchestration layer for Kombee AI hackathon."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
